@@ -5,7 +5,10 @@ namespace Hypershop\SpikePerformance\Plugin\Magento\Backend\Controller\Adminhtml
 
 use Hypershop\SpikePerformance\Helper\Config;
 use Magento\Backend\Controller\Adminhtml\Cache\MassRefresh as MagentoMassRefresh;
+use Magento\Framework\Controller\Result\Redirect;
 use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\Controller\ResultInterface;
+use Magento\Framework\Exception\NoSuchEntityException;
 
 class MassRefresh
 {
@@ -26,6 +29,12 @@ class MassRefresh
         $this->resultFactory = $resultFactory;
     }
 
+    /**
+     * @param MagentoMassRefresh $subject
+     * @param callable $proceed
+     * @return Redirect|Redirect&ResultInterface
+     * @throws NoSuchEntityException
+     */
     public function aroundExecute(MagentoMassRefresh $subject, callable $proceed)
     {
         if ($this->spikePerformanceConfig->getIsEnabled()) {
