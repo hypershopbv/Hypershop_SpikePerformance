@@ -3,28 +3,29 @@ declare(strict_types=1);
 
 namespace Hypershop\SpikePerformance\Plugin\Magento\CacheInvalidate\Observer;
 
+use Hypershop\SpikePerformance\Helper\Config;
 use Magento\CacheInvalidate\Observer\InvalidateVarnishObserver as MagentoInvalidateVarnishObserver;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class InvalidateVarnishObserver
 {
     /**
-     * @var ScopeConfigInterface
+     * @var Config
      */
-    private $scopeConfig;
+    private $spikePerformanceConfig;
 
     /**
-     * @param ScopeConfigInterface $scopeConfig
+     * @param Config $spikePerformanceConfig
      */
     public function __construct(
-        ScopeConfigInterface $scopeConfig
+        Config $spikePerformanceConfig
     ) {
-        $this->scopeConfig = $scopeConfig;
+        $this->spikePerformanceConfig = $spikePerformanceConfig;
     }
 
     public function aroundExecute(MagentoInvalidateVarnishObserver $subject, callable $proceed, $observer)
     {
-        if ($this->scopeConfig->getValue('hypershop_spikeperformance/general/enable')) {
+        if ($this->spikePerformanceConfig->getIsEnabled()) {
             return;
         }
 

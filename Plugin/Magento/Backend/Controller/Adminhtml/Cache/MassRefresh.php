@@ -3,36 +3,32 @@ declare(strict_types=1);
 
 namespace Hypershop\SpikePerformance\Plugin\Magento\Backend\Controller\Adminhtml\Cache;
 
+use Hypershop\SpikePerformance\Helper\Config;
 use Magento\Backend\Controller\Adminhtml\Cache\MassRefresh as MagentoMassRefresh;
-use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Controller\ResultFactory;
 
 class MassRefresh
 {
     /**
-     * @var ScopeConfigInterface
+     * @var Config
      */
-    private $scopeConfig;
+    private $spikePerformanceConfig;
     /**
      * @var ResultFactory
      */
     private $resultFactory;
 
-    /**
-     * @param ScopeConfigInterface $scopeConfig
-     * @param ResultFactory $resultFactory
-     */
     public function __construct(
-        ScopeConfigInterface $scopeConfig,
+        Config $spikePerformanceConfig,
         ResultFactory $resultFactory
     ) {
-        $this->scopeConfig = $scopeConfig;
+        $this->spikePerformanceConfig = $spikePerformanceConfig;
         $this->resultFactory = $resultFactory;
     }
 
     public function aroundExecute(MagentoMassRefresh $subject, callable $proceed)
     {
-        if ($this->scopeConfig->getValue('hypershop_spikeperformance/general/enable')) {
+        if ($this->spikePerformanceConfig->getIsEnabled()) {
             $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
             return $resultRedirect->setPath('adminhtml/*');
         }
