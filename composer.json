@@ -8,7 +8,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Hypershop\\Hypershop_SpikePerformance\\": ""
+            "Hypershop\\SpikePerformance\\": ""
         }
     }
 }
