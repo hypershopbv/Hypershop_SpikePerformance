@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="hypershop_spikeperformance" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>SpikePerformance</label>
+            <tab>hypershop_config</tab>
+            <resource>Hypershop_SpikePerformance::hypershop_spikeperformance</resource>
+            <group id="general" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <attribute type="expanded">1</attribute>
+                <field id="enable" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable this extension to temporarily disable any cache flush from the Magento backend or frontend. Useful for moments when large traffic amounts are expected and the performance needs to be optimal.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

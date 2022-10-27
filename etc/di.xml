@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\CacheInvalidate\Observer\InvalidateVarnishObserver">
+        <plugin name="Hypershop_SpikePerformance::disabled_cache_invalidation" type="Hypershop\SpikePerformance\Plugin\Magento\CacheInvalidate\Observer\InvalidateVarnishObserverPlugin" />
+    </type>
+    <type name="Magento\Backend\Controller\Adminhtml\Cache\MassRefresh">
+        <plugin name="Hypershop_SpikePerformance::disabled_cache_refresh_backend" type="Hypershop\SpikePerformance\Plugin\Magento\Backend\Controller\Adminhtml\Cache\MassRefreshPlugin" />
+    </type>
+    <type name="Magento\Backend\Controller\Adminhtml\Cache\FlushSystem">
+        <plugin name="Hypershop_SpikePerformance::disabled_cache_flush_backend" type="Hypershop\SpikePerformance\Plugin\Magento\Backend\Controller\Adminhtml\Cache\FlushSystemPlugin" />
+    </type>
+    <type name="Magento\Backend\Controller\Adminhtml\Cache\FlushAll">
+        <plugin name="Hypershop_SpikePerformance::disabled_cache_clean_backend" type="Hypershop\SpikePerformance\Plugin\Magento\Backend\Controller\Adminhtml\Cache\FlushAllPlugin" />
+    </type>
+</config>
