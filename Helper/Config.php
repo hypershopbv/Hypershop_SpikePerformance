@@ -49,7 +49,7 @@ class Config extends AbstractHelper
     public function getConfigValueByKey(string $key)
     {
         return $this->scopeConfig->getValue(
-            'system/hypershop_spikeperformance/' . $key,
+            'hypershop_spikeperformance/settings/' . $key,
             ScopeInterface::SCOPE_STORE,
             $this->storeManager->getStore()->getId()
         );
