@@ -6,7 +6,7 @@
   to be optimal.
 
 ## Setup
-- After putting this module in app/code or install it through composer, run a bin/magento setup:upgrade to add it to the Magento module list.
+- After install it through composer, run a bin/magento setup:upgrade to add it to the Magento module list.
 
 ## Usage / Settings
 - Settings can be found under `Hyperstack > Spike Performance`
