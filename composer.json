@@ -1,0 +1,14 @@
+{
+    "name": "hypershop/module-spike-performance",
+    "description": "Magento 2 module to prevent cache flushes during peak moments",
+    "type": "magento2-module",
+    "version": "100.4.5",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Hypershop\\Hypershop_SpikePerformance\\": ""
+        }
+    }
+}
