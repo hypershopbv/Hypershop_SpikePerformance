@@ -6,8 +6,9 @@
   to be optimal.
 - If enabled, there is a cronjob that reindexes and flushes all caches at midnight around 03:00. (Optional setting)
 
-## Setup
-- After install this module through composer, run a bin/magento setup:upgrade to add it to the Magento module list.
+## Installation / Setup
+- Install the module using the command `composer require hypershop/module-spike-performance`
+- After installing, run a bin/magento setup:upgrade to add it to the Magento module list.
 
 ## Usage / Settings
 - Settings can be found under `Hyperstack > Spike Performance`
