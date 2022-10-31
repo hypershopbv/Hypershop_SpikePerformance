@@ -21,6 +21,10 @@ class MassRefresh
      */
     private $resultFactory;
 
+    /**
+     * @param Config $spikePerformanceConfig
+     * @param ResultFactory $resultFactory
+     */
     public function __construct(
         Config $spikePerformanceConfig,
         ResultFactory $resultFactory

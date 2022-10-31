@@ -21,27 +21,28 @@
                         to be optimal.
                     </comment>
                 </field>
-                <field id="cron_enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Cronjobs enabled</label>
+                <field id="cron_enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Cronjob enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <comment>Activates a cronjob that flushes cache &amp; reindex Magento programmatically</comment>
+                    <comment><![CDATA[Activates a cronjob that flushes cache &amp; reindex Magento programmatically <strong>(Runs at 03:00)</strong>]]></comment>
 
                     <depends>
                         <field id="enabled">1</field>
                     </depends>
                 </field>
-                <field id="cron_expression" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <!--<field id="cron_expr" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Cron expression - Cache flush &amp; Reindex</label>
-                    <comment><![CDATA[
+                    <comment>
+                    <![CDATA[
                     Enter cron expression<br/>
                     <br/>
                     * * * * *<br/>
                     | | | | |<br/>
-                    | | | | +---- Day of the Week   (range: 0-6, 1 standing for Monday)<br/>
-                    | | | +------ Month of the Year (range: 1-12)<br/>
-                    | | +-------- Day of the Month  (range: 1-31)<br/>
-                    | +---------- Hour              (range: 0-23)<br/>
-                    +------------ Minute            (range: 0-59)<br/>
+                    | | | | +&#45;&#45;&#45;&#45; Day of the Week   (range: 0-6, 1 standing for Monday)<br/>
+                    | | | +&#45;&#45;&#45;&#45;&#45;&#45; Month of the Year (range: 1-12)<br/>
+                    | | +&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; Day of the Month  (range: 1-31)<br/>
+                    | +&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; Hour              (range: 0-23)<br/>
+                    +&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45; Minute            (range: 0-59)<br/>
                     <br/>
                     Read more about cron expressions - <a target="_blank" href="https://en.wikipedia.org/wiki/Cron">here</a>
                     ]]>
@@ -50,7 +51,7 @@
                         <field id="enabled">1</field>
                         <field id="cron_enabled">1</field>
                     </depends>
-                </field>
+                </field>-->
             </group>
         </section>
     </system>

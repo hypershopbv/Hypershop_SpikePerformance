@@ -5,7 +5,8 @@
         <hypershop_spikeperformance>
             <settings>
                 <enabled>0</enabled>
-                <cron_expression>0 3 * * *</cron_expression>
+                <cron_enabled>0</cron_enabled>
+                <cron_expr>0 3 * * *</cron_expr>
             </settings>
         </hypershop_spikeperformance>
     </default>
