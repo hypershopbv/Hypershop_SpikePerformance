@@ -12,9 +12,21 @@ use Magento\Indexer\Model\IndexerFactory;
 
 class ReindexFlushCache
 {
+    /**
+     * @var Config
+     */
     private $spikePerformanceConfig;
+    /**
+     * @var Manager
+     */
     private $cacheManager;
+    /**
+     * @var IndexerFactory
+     */
     private $indexerFactory;
+    /**
+     * @var CollectionFactory
+     */
     private $collectionFactory;
 
     public function __construct(

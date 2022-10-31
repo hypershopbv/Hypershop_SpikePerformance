@@ -1,0 +1,50 @@
+& when (@media-common = true) {
+    .adminhtml-cache-index {
+        &.spike-performance-is-active {
+            .admin__data-grid-header-row,
+            .flush-cache-storage,
+            .flush-cache-magento,
+            .additional-cache-management {
+                opacity: 0.3;
+                pointer-events: none;
+            }
+
+            .admin__data-grid-wrap {
+                .data-grid {
+                    position: relative;
+
+                    td,
+                    th {
+                        border-color: transparent;
+                    }
+
+                    &:after {
+                        align-items: center;
+                        content: "Hypershop's Spike Performance module is enabled";
+                        display: flex;
+                        font-size: 3rem;
+                        font-weight: bold;
+                        justify-content: center;
+                        height: 100%;
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 2;
+                    }
+
+                    &:before {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background: rgba(255, 255, 255, 0.8);
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+    }
+}
