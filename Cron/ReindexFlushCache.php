@@ -29,6 +29,12 @@ class ReindexFlushCache
      */
     private $collectionFactory;
 
+    /**
+     * @param Config $spikePerformanceConfig
+     * @param Manager $cacheManager
+     * @param IndexerFactory $indexerFactory
+     * @param CollectionFactory $collectionFactory
+     */
     public function __construct(
         Config $spikePerformanceConfig,
         Manager $cacheManager,
