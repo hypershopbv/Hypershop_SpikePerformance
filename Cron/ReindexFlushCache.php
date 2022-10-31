@@ -6,6 +6,7 @@ namespace Hypershop\SpikePerformance\Cron;
 
 use Hypershop\SpikePerformance\Helper\Config;
 use Magento\Framework\App\Cache\Manager;
+use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Indexer\Model\Indexer\CollectionFactory;
 use Magento\Indexer\Model\IndexerFactory;
 
@@ -28,12 +29,29 @@ class ReindexFlushCache
         $this->collectionFactory = $collectionFactory;
     }
 
+    /**
+     * @throws NoSuchEntityException
+     */
     public function execute()
     {
         if (!$this->spikePerformanceConfig->getIsCronEnabled()) {
             return;
         }
 
+        // Reindex all indexes
+        $this->reindexAllIndexes();
+        // Flush all caches
+        $this->flushAllCaches();
+    }
+
+    /**
+     * Reindex all indexes
+     *
+     * @return void
+     * @throws \Exception
+     */
+    private function reindexAllIndexes()
+    {
         // Reindex all indexes
         $indexerCollection = $this->collectionFactory->create();
         $indexIds = $indexerCollection->getAllIds();
@@ -42,8 +60,15 @@ class ReindexFlushCache
             $index = $this->indexerFactory->create()->load($indexId);
             $index->reindexAll();
         }
+    }
 
-        // Flush all caches
+    /**
+     * Flush all caches
+     *
+     * @return void
+     */
+    private function flushAllCaches()
+    {
         $this->cacheManager->flush($this->cacheManager->getAvailableTypes());
     }
 }
