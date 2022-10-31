@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Hypershop\SpikePerformance\Helper;
 
-use Magento\Config\Model\ResourceModel\Config\Data\CollectionFactory;
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\App\Helper\Context;
 use Magento\Framework\Exception\NoSuchEntityException;
@@ -16,10 +15,6 @@ class Config extends AbstractHelper
      * @var StoreManagerInterface
      */
     private $storeManager;
-    /**
-     * @var CollectionFactory
-     */
-    private $collectionFactory;
 
     /**
      * @param StoreManagerInterface $storeManager
@@ -27,12 +22,10 @@ class Config extends AbstractHelper
      */
     public function __construct(
         StoreManagerInterface $storeManager,
-        Context $context,
-        CollectionFactory $collectionFactory
+        Context $context
     ) {
         parent::__construct($context);
         $this->storeManager = $storeManager;
-        $this->collectionFactory = $collectionFactory;
     }
 
     /**
@@ -41,20 +34,20 @@ class Config extends AbstractHelper
      * @return bool
      * @throws NoSuchEntityException
      */
-    public function getIsEnabled()
+    public function getIsEnabled(): bool
     {
-        return $this->getConfigValueByKey('enabled');
+        return (bool) $this->getConfigValueByKey('enabled');
     }
 
     /**
      * Check if config value for cronjob is enabled
      *
-     * @return mixed
+     * @return bool
      * @throws NoSuchEntityException
      */
-    public function getIsCronEnabled()
+    public function getIsCronEnabled(): bool
     {
-        return $this->getConfigValueByKey('cron_enabled');
+        return (bool) $this->getConfigValueByKey('cron_enabled');
     }
 
     /**

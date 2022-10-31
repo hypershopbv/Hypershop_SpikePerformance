@@ -1,9 +1,9 @@
 <?php
-
 declare(strict_types=1);
 
 namespace Hypershop\SpikePerformance\Cron;
 
+use Exception;
 use Hypershop\SpikePerformance\Helper\Config;
 use Magento\Framework\App\Cache\Manager;
 use Magento\Framework\Exception\NoSuchEntityException;
@@ -31,24 +31,23 @@ class ReindexFlushCache
 
     /**
      * @throws NoSuchEntityException
+     * @throws Exception
      */
     public function execute()
     {
-        if (!$this->spikePerformanceConfig->getIsCronEnabled()) {
-            return;
+        if ($this->spikePerformanceConfig->getIsEnabled() && $this->spikePerformanceConfig->getIsCronEnabled()) {
+            // Reindex all indexes
+            $this->reindexAllIndexes();
+            // Flush all caches
+            $this->flushAllCaches();
         }
-
-        // Reindex all indexes
-        $this->reindexAllIndexes();
-        // Flush all caches
-        $this->flushAllCaches();
     }
 
     /**
      * Reindex all indexes
      *
      * @return void
-     * @throws \Exception
+     * @throws Exception
      */
     private function reindexAllIndexes()
     {
