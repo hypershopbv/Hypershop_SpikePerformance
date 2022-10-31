@@ -24,7 +24,7 @@
                 <field id="cron_enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Cronjob enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <comment><![CDATA[Activates a cronjob that flushes cache &amp; reindex Magento programmatically <strong>(Runs at 03:00)</strong>]]></comment>
+                    <comment><![CDATA[Activates a cronjob that flushes cache &amp; reindex Magento programmatically. <strong>(Runs at 03:00)</strong>]]></comment>
 
                     <depends>
                         <field id="enabled">1</field>
