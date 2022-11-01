@@ -1,6 +1,6 @@
 {
     "name": "hypershop/module-spike-performance",
-    "version": "100.4.5",
+    "version": "100.4.5.1",
     "type": "magento2-module",
     "description": "Magento 2 module to prevent cache flushes during peak moments",
     "homepage": "https://github.com/hypershopbv/Hypershop_SpikePerformance",
