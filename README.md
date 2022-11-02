@@ -13,7 +13,7 @@
 ## Usage / Settings
 - Settings can be found under `Hyperstack > Spike Performance`
 
-## Extends
+## Plugins
 - Potato Crawler plugin to to crawl the webshop after the cronjob is ready: [Hypershop_SpikePerformancePotatoCrawler](https://github.com/hypershopbv/Hypershop_SpikePerformancePotatoCrawler)
 
 ## Common issues
