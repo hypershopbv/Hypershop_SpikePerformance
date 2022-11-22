@@ -8,7 +8,7 @@
 
 ## Installation / Setup
 - Install the module using the command `composer require hypershop/module-spike-performance`
-- After installing, run a bin/magento setup:upgrade to add it to the Magento module list.
+- After installing, run a `bin/magento setup:upgrade` to add it to the Magento module list.
 
 ## Usage / Settings
 - Settings can be found under `Hyperstack > Spike Performance`
