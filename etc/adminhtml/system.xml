@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="hypershop_config" translate="label" sortOrder="-9999" class="hypershop-tab">
-            <label>Hyperstack</label>
+            <label>HYPRstack</label>
         </tab>
 
         <section id="hypershop_spikeperformance" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
