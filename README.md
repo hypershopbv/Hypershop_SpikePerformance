@@ -11,7 +11,7 @@
 - After installing, run a `bin/magento setup:upgrade` to add it to the Magento module list.
 
 ## Usage / Settings
-- Settings can be found under `Hyperstack > Spike Performance`
+- Settings can be found under `HYPRstack > Spike Performance`
 
 ## Addons
 - Potato Crawler plugin to to crawl the webshop after the cronjob is ready: [Hypershop_SpikePerformancePotatoCrawler](https://github.com/hypershopbv/Hypershop_SpikePerformancePotatoCrawler)
